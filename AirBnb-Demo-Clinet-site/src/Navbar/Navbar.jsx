@@ -21,7 +21,10 @@ const Navbar = () => {
               />
             </a>
 
-            <button className='font-semibold' to="/">Stays</button>
+            <button className="font-semibold" to="/">
+              Stays
+            </button>
+            
             {/* Dropdown Menu */}
             <MenuDropdown />
           </div>
