@@ -3,6 +3,7 @@ import logoImg from '../assets/airbnb_logo.png'
 import MenuDropdown from './MenuDropdown'
 import Container from '../Container/Container'
 import SearchBar from './SearchBar';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -11,7 +12,7 @@ const Navbar = () => {
         <Container>
           <div className="flex flex-row  items-center justify-between gap-3 md:gap-0">
             {/* Logo */}
-            <a to="/">
+            <Link to="/">
               <img
                 className="md:block"
                 src={logoImg}
@@ -19,7 +20,7 @@ const Navbar = () => {
                 width="100"
                 height="90"
               />
-            </a>
+            </Link>
 
             <button className="font-semibold" to="/">
               Stays

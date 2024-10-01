@@ -40,7 +40,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="">
       {/* Search Bar */}
       <div className="flex flex-col h-16 lg:flex-row items-center bg-white p-4 rounded-full shadow-md w-full max-w-6xl mx-auto mt-2">
         {/* Where */}

@@ -11,7 +11,7 @@ const Categories = () => {
 
   return (
     <Container>
-      <div className="p-5 flex item-center justify-between overflow-x-auto">
+      <div className="p-3 flex item-center justify-between gap-4 overflow-x-auto">
         {categories?.map((item) => (
           <CategoryBox
             key={item?.label}

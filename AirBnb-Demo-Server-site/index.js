@@ -1,18 +1,14 @@
-const express=require("express")
-const cors=require("cors")
-const app=express();
+const express = require("express");
+const cors = require("cors");
+const app = express();
 require('dotenv').config();
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 
 const port = process.env.PORT || 3000;
 
-
-//middleware
+// Middleware
 app.use(cors());
 app.use(express.json());
-
-
-
 
 const uri = `mongodb+srv://${process.env.username}:${process.env.password}@cluster0.ij6ptye.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
@@ -26,31 +22,25 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-    
     await client.connect();
-    const users = client.db("userDB").collection("users");
+    const roomsCollection = client.db("stay-vista").collection("rooms");
 
+    app.get("/rooms", async (req, res) => {
+      const result = await roomsCollection.find().toArray();
+      res.send(result);
+    });
 
-    
-      
-    
-    
-    await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
-  } finally {
-    
-     await client.close();
+  } catch (error) {
+    console.error("Failed to connect to MongoDB:", error);
   }
 }
 run().catch(console.dir);
 
+app.get("/", (req, res) => {
+  res.send(`Server is running`);
+});
 
-
-
-app.get("/",(req,res)=>{
-    res.send(`Server is running`)
-})
-
-app.listen(port,()=>{
-    console.log(`server is running on port no ${port}`)
-})
+app.listen(port, () => {
+  console.log(`Server is running on port no ${port}`);
+});

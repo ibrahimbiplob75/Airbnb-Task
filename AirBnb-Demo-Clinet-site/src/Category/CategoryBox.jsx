@@ -41,8 +41,8 @@ const CategoryBox = ({ label, Icon,active }) => {
       ${active ? "border-b-neutral-800 text-neutral-800" : ""}
       `}
     >
-      <Icon size={26} /> 
-      <div className="text-sm font-medium">{label}</div>
+      <Icon size={20} /> 
+      <div className="text-xs font-light">{label}</div>
       
     </div>
   );
