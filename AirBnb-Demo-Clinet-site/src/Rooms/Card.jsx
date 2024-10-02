@@ -28,7 +28,7 @@ const Card = ({ room }) => {
             {room?.images?.map((image, index) => (
               <div key={index}>
                 <img
-                  className="object-cover h-full w-full"
+                  className="object-cover h-40 w-full"
                   src={image}
                   alt={`Room ${index + 1}`}
                 />
@@ -36,7 +36,7 @@ const Card = ({ room }) => {
             ))}
           </Slider>
           <div className="absolute top-3 right-3 bg-white p-2 rounded-full shadow-md">
-            <AiOutlineHeart size={20} className="text-red-500" />
+            <AiOutlineHeart size={16} className="text-red-500" />
           </div>
         </div>
         <div className="font-semibold text-lg">{room?.location}</div>
@@ -58,7 +58,7 @@ function SampleNextArrow(props) {
       className="absolute top-1/2 right-3 transform -translate-y-1/2 bg-gray-100 p-2 rounded-full cursor-pointer z-10"
       onClick={onClick}
     >
-      <AiOutlineArrowRight size={20} />
+      <AiOutlineArrowRight size={12} />
     </div>
   );
 }
@@ -70,7 +70,7 @@ function SamplePrevArrow(props) {
       className="absolute top-1/2 left-3 transform -translate-y-1/2 bg-gray-100 p-2 rounded-full cursor-pointer z-10"
       onClick={onClick}
     >
-      <AiOutlineArrowLeft size={20} />
+      <AiOutlineArrowLeft size={12} />
     </div>
   );
 }

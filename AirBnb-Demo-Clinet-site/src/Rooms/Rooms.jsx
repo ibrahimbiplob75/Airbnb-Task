@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import Container from "../Container/Container";
 import Card from "./Card";
+import Empty from "../EmptyMessage/Empty";
 
 
 const Rooms = () => {
@@ -41,11 +42,11 @@ const Rooms = () => {
         </div>
       ) : (
         <div className="flex justify-center items-center min-h-[calc(100vh-300px)]">
-          {/* <Empty
+          <Empty
             center={"text-center"}
             title={`${category} rooms are not availiable`}
             subtitle={"Find another Category"}
-          ></Empty> */}
+          ></Empty>
         </div>
       )}
     </Container>
